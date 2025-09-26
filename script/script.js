@@ -1,4 +1,4 @@
-
+import { gsap } from 'gsap';
 
 const submitBtn = document.getElementById('Submit-btn');
 
@@ -20,7 +20,6 @@ submitBtn.addEventListener('click', (event) => {
         isValid = false;
         showError('fname-error', "Please enter first name*")
     }
-
     if (lname === "") {
         isValid = false;
         showError('lname-error', "Please enter first name*")
@@ -71,26 +70,12 @@ function validateEmail(email) {
     return re.test(String(email).toLowerCase());
 }
 
-function hobbie(){
+function hobbie() {
     let input = hobbiesContainer.getElementsByTagName('input');
 
-    Array.from(input).forEach((ele)=>{
-        if(ele.checked == true){
+    Array.from(input).forEach((ele) => {
+        if (ele.checked == true) {
             hobbies.push(ele.name)
         }
     })
-}
-
-let firstsection = document.querySelectorAll("");
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');  
-    } else {
-      entry.target.classList.remove('show'); 
-    }
-  });
-});
-
-observer.observe(firstsection);
+};

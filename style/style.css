@@ -163,8 +163,7 @@ h1.hero-text {
 
 .options {
     gap: 5px;
-    opacity: 0;
-}
+};
 
 
 .option-text {
