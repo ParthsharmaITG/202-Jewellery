@@ -151,8 +151,8 @@ h1.hero-text {
     position: absolute;
     top: 34%;
     gap: 261px;
-    width: 100%;
-    transform: translate(-50%, 50%);
+    width: 84%;
+    z-index: 1001;
 }
 
 /*banner-section-css-end */
@@ -271,7 +271,7 @@ span.product-price {
 
 .video-box {
     width: 660px;
-    height: 818px;
+    height: 823px;
     position: relative;
 }
 
