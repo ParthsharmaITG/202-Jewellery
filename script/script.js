@@ -9,7 +9,7 @@ submitBtn.addEventListener('click', (event) => {
     const lname = document.getElementById('last-name').value.trim();
     const email = document.getElementById('email').value.trim();
     const phone = document.getElementById('phone').value.trim();
-    const hobbiesContainer = document.querySelector('.hobbies-input');
+    let hobbiesContainer = document.querySelector('.hobbies-input');
 
     let hobbies = hobbie(hobbiesContainer);
 
@@ -30,7 +30,7 @@ submitBtn.addEventListener('click', (event) => {
     } else if (!validateEmail(email)) {
         isValid = false;
         showError('email-error', "Invalid email format*");
-  }
+    }
 
     if (phone === "") {
         isValid = false;
@@ -41,7 +41,7 @@ submitBtn.addEventListener('click', (event) => {
     }
 
     if (!isValid) {
-        return; 
+        return;
     }
 
     alert("Form submitted successfully!");
@@ -51,8 +51,8 @@ submitBtn.addEventListener('click', (event) => {
         lastname: lname,
         email: email,
         phone: phone,
-        hobbies: hobbies
-    };
+        hobbies: hobbies,
+    }
 
     console.log(data);
 });
@@ -81,18 +81,19 @@ function validateEmail(email) {
 
 function hobbie(hobbiesContainer) {
     const hobbies = [];
-    if (!hobbiesContainer) return hobbies; // If container missing, return empty array
-
-    // Select checkboxes with name="hobbies"
+    if (!hobbiesContainer) {
+        return hobbies;
+    }
     const inputs = hobbiesContainer.querySelectorAll('input[type="checkbox"][name="hobbies"]');
 
     inputs.forEach((checkbox) => {
         if (checkbox.checked) {
             hobbies.push(checkbox.value);
-            console.log(checkbox.value); // log the value instead of element
+            console.log(checkbox.value);
+        } else {
+            showError('hobbies-error', "Please select hobbies*")
         }
     });
 
     return hobbies;
-}
-
+};
