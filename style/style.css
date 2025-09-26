@@ -59,6 +59,11 @@
     transition: all .3s;
     color: white;
 }
+.secondary-button:hover{
+    border: 1px solid var(--grey-color);
+    color: var(--grey-color);
+    background: transparent;
+}
 
 
 /* header-css */
@@ -240,15 +245,16 @@ span.product-price {
 .product-image {
     position: relative;
 }
-
+.product-card{
+    transition: all .3s;
+}
 .product-card:hover {
     .add-product-btn {
         opacity: 1;
         transition: all .6s
-    }
-
-    ;
+    };
     cursor: pointer;
+    transform: translateY(-10px);
 }
 
 .product-btn {
@@ -483,7 +489,7 @@ p.list-title {
 }
 
 #Submit-btn {
-    border: none;
+    border: 1px solid var(--grey-color);
     cursor: pointer;
 }
 
