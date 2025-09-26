@@ -81,7 +81,7 @@ function hobbie(){
     })
 }
 
-let firstsection = document.querySelectorAll(".options");
+let firstsection = document.querySelectorAll("");
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
