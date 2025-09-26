@@ -1,4 +1,4 @@
-import { gsap } from 'gsap';
+
 
 const submitBtn = document.getElementById('Submit-btn');
 
