@@ -80,3 +80,13 @@ function hobbie(){
         }
     })
 }
+
+let firstsection = document.querySelector(".options"); 
+
+const observer = new IntersectionObserver(entry=>{
+    if(entry.isIntersecting){
+        entry.classlist.toggle('show');
+    }
+})
+
+observer.observe(firstsection);
