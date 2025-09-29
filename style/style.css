@@ -404,6 +404,10 @@ label {
     padding: 10px;
 }
 
+.message-input:focus {
+    outline: none;
+}
+
 .down-checkbox {
     gap: 10px;
 }
@@ -702,9 +706,10 @@ p.error {
         position: absolute;
         top: 44%;
     }
-        .text-contanier {
-    padding: 0px 0px;
-}
+
+    .text-contanier {
+        padding: 0px 0px;
+    }
 }
 
 @media (max-width:600px) {
@@ -720,6 +725,10 @@ p.error {
 
     .mail-box input {
         width: 56%;
+    }
+
+    .mail-box input {
+        width: 100%;
     }
 
     .mail-box {
@@ -744,6 +753,11 @@ p.error {
         justify-content: end;
         /* gap: 16px; */
     }
+    .upper-box {
+    padding: 30px 20px;
+    background-color: var(--grey-color);
+    flex-wrap: wrap;
+}
 
     /* .banner-content {
         gap: 50px;

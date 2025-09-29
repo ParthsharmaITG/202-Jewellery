@@ -10,6 +10,7 @@ submitBtn.addEventListener('click', (event) => {
     const email = document.getElementById('email').value.trim();
     const phone = document.getElementById('phone').value.trim();
     let hobbiesContainer = document.querySelector('.hobbies-input');
+    let message = document.getElementById('message').value;
 
     let hobbies = hobbie(hobbiesContainer);
 
@@ -40,6 +41,7 @@ submitBtn.addEventListener('click', (event) => {
         showError('phone-error', "Phone number must be 10 digits*");
     }
 
+
     if (!isValid) {
         return;
     }
@@ -52,6 +54,8 @@ submitBtn.addEventListener('click', (event) => {
         email: email,
         phone: phone,
         hobbies: hobbies,
+        gender: radioValue(),
+        message: message
     }
 
     console.log(data);
@@ -89,7 +93,7 @@ function hobbie(hobbiesContainer) {
     inputs.forEach((checkbox) => {
         if (checkbox.checked) {
             hobbies.push(checkbox.value);
-            console.log(checkbox.value);
+            // console.log(checkbox.value);
         } else {
             showError('hobbies-error', "Please select hobbies*")
         }
@@ -97,3 +101,19 @@ function hobbie(hobbiesContainer) {
 
     return hobbies;
 };
+
+function radioValue() {
+    const radios = document.getElementsByName('gender');
+    let value;
+    for (let i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+            value = radios[i].value;
+            break;
+        } else {
+            showError('gender-error', "Please select gender*");
+            // isValid = false;
+        }
+    }
+ // console.log(value);
+    return value;
+}
