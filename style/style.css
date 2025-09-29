@@ -14,6 +14,10 @@
     --border-one: #E0E0E0;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 .align-self {
     align-self: center;
 }
@@ -517,8 +521,7 @@ p.list-title {
 
 p.error {
     display: none;
-}
-
+};
 
 @media (max-width: 1355px) {
     .product-image img {
@@ -753,11 +756,12 @@ p.error {
         justify-content: end;
         /* gap: 16px; */
     }
+
     .upper-box {
-    padding: 30px 20px;
-    background-color: var(--grey-color);
-    flex-wrap: wrap;
-}
+        padding: 30px 20px;
+        background-color: var(--grey-color);
+        flex-wrap: wrap;
+    }
 
     /* .banner-content {
         gap: 50px;
